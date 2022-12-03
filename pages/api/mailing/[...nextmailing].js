@@ -1,4 +1,4 @@
-import { NextMailing } from "next-mailing";
+import NextMailing from "next-mailing/api";
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 

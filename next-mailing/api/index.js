@@ -1,22 +1,7 @@
 import { render } from "mailing-core";
+import { cache } from "../shared/cache";
 
-export function NextMailing() {
-  const cache = {};
-
-  // Populate cache
-  const allEntries = require.context("emails/", false, /\.jsx$/);
-  for (const entry of allEntries.keys()) {
-    if (entry.startsWith("./")) {
-      continue;
-    }
-    const [_, name] = entry.match(/\/(.*)\.jsx$/);
-    cache[name] = {
-      name,
-      path: entry,
-      Component: allEntries(entry).default,
-    };
-  }
-
+export default function NextMailing() {
   return async function handler(req, res) {
     const { nextmailing } = req.query;
     const [action, ...rest] = nextmailing;
