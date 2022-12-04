@@ -8,7 +8,14 @@ export async function getServerSideProps(context) {
   }));
 
   const [name] = context.params.nextmailing ?? [];
-  const entry = cache[name ?? templates[0].name];
+  const entry = cache[name ?? templates?.[0]?.name];
+
+  if (!entry) {
+    return {
+      notFound: true,
+    };
+  }
+
   const { html } = render(<entry.Component />);
 
   return {
