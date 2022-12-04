@@ -3,6 +3,8 @@ import { config } from "./config";
 
 const cache = {};
 
+console.log({ config });
+
 // Populate cache
 if (config.emailsDir && fs.existsSync(config.emailsDir)) {
   const regex = new RegExp(`^${config.emailsDir}\\/([^\\/]*)\\.[jt]sx$`);

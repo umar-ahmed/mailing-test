@@ -2,7 +2,9 @@ import { render } from "mailing-core";
 import { cache } from "../shared/cache";
 
 export default function NextMailingAPI() {
+  console.log("NextMailingAPI", cache);
   return async function handler(req, res) {
+    console.log("handler", cache);
     const { nextmailing } = req.query;
     const [action, ...rest] = nextmailing;
 
