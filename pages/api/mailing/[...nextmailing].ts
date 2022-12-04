@@ -1,5 +1,5 @@
-import NextMailingAPI from "next-mailing/api";
+import { handler } from "emails/server";
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default NextMailingAPI();
+export default handler;

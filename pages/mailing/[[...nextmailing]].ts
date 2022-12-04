@@ -1,5 +1,5 @@
-import NextMailingPage from "next-mailing/page";
-import { getServerSideProps } from "next-mailing/page/server";
+import { NextMailingPage } from "emails/client";
+import { getServerSideProps } from "emails/server";
 
 export default NextMailingPage;
 
