@@ -6,5 +6,5 @@ export default NextMailingPage;
 export { getServerSideProps };
 
 export const config = {
-  unstable_includeFiles: ["emails/**/*.{js,ts,jsx,tsx}"],
+  unstable_includeFiles: ["emails/"],
 };
