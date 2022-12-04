@@ -13,6 +13,10 @@ const context = require.context(
 
 console.log("context", context.keys());
 
+console.log(config.emailsDir);
+console.log(fs.existsSync(config.emailsDir));
+console.log(fs.readdirSync("./"));
+
 // Populate cache
 if (config.emailsDir && fs.existsSync(config.emailsDir)) {
   const regex = new RegExp(`^${config.emailsDir}\\/([^\\/]*)\\.[jt]sx$`);
