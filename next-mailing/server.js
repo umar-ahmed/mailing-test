@@ -23,8 +23,8 @@ export function createNextMailing(requireContext) {
 
   return {
     async handler(req, res) {
-      const { nextmailing } = req.query;
-      const [action, ...rest] = nextmailing;
+      const { nextmailing = [] } = req.query;
+      const [action = "list", ...rest] = nextmailing;
 
       if (action === "preview") {
         const [name] = rest;
