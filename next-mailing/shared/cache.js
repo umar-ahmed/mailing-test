@@ -1,12 +1,17 @@
 import fs from "node:fs";
 import { config } from "./config";
-import { context } from "./context";
 
 const cache = {};
 
 // Populate cache
 if (config.emailsDir && fs.existsSync(config.emailsDir)) {
   const regex = new RegExp(`^${config.emailsDir}\\/([^\\/]*)\\.[jt]sx$`);
+
+  const context = require.context(
+    "../../",
+    true,
+    /^\.\/(?!node_modules\/).*\.[jt]sx$/
+  );
 
   for (const entry of context.keys()) {
     const match = entry.match(regex);
