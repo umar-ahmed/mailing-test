@@ -5,5 +5,5 @@ import NextMailing from "next-mailing/api";
 export default NextMailing();
 
 export const config = {
-  unstable_includeFiles: ["emails/"],
+  unstable_includeFiles: ["emails/**/*"],
 };
