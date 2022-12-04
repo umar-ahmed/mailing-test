@@ -5,15 +5,17 @@ const cache = {};
 
 console.log({ config });
 
+const context = require.context(
+  "../../",
+  true,
+  /^\.\/(?!node_modules\/).*\.[jt]sx$/
+);
+
+console.log("context", context.keys());
+
 // Populate cache
 if (config.emailsDir && fs.existsSync(config.emailsDir)) {
   const regex = new RegExp(`^${config.emailsDir}\\/([^\\/]*)\\.[jt]sx$`);
-
-  const context = require.context(
-    "../../",
-    true,
-    /^\.\/(?!node_modules\/).*\.[jt]sx$/
-  );
 
   for (const entry of context.keys()) {
     const match = entry.match(regex);
