@@ -1,7 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const config = {};
+const config = {
+  emailsDir: "./emails",
+};
 
 const MAILING_CONFIG_FILENAME = "mailing.config.json";
 

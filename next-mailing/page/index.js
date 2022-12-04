@@ -20,7 +20,7 @@ export default function NextMailingPage({ html, templates }) {
           {templates.map((template) => (
             <li key={template.name}>
               <Link
-                href={`/mailing/${template.name.replace(/\.[jt]sx$/, "")}`}
+                href={`/mailing/${template.name}`}
                 style={{
                   textDecoration: "underline",
                 }}
