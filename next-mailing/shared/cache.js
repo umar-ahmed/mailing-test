@@ -2,17 +2,11 @@ import { config } from "./config";
 
 const cache = {};
 
-console.log({ config });
-
 const context = require.context(
   "../../",
   true,
   /^\.\/(?!node_modules\/).*\.[jt]sx$/
 );
-
-console.log("context", context.keys());
-
-console.log(config.emailsDir);
 
 // Populate cache
 if (config.emailsDir) {
