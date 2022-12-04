@@ -1,7 +1,7 @@
 import React from "react";
 import { MjmlText } from "mjml-react";
 
-export default function Text({ children, maxWidth, ...props }) {
+export default function Text({ children, maxWidth = false, ...props }) {
   if (maxWidth) {
     return (
       <MjmlText {...props} cssClass="text">
